@@ -30,7 +30,7 @@ Run `train.py` to start training process.
 ##### `Real` vs `Fake`
 
 <a><div class="column">
-    <img src="assets/compare.png" align="center" height="500px" width="500px"/>
+    <img src="assets/compare.png" align="center" height="300px" width="500px"/>
 </div></a>
 
 ##### Improvement of `Generator` over epochs
