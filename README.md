@@ -2,7 +2,7 @@ Deep Convolutional GAN-pytorch
 ==============================
 A Pytorch implementation of Deep Convolutional GAN (DCGAN).
 
-[DCGAN](https://arxiv.org/pdf/1511.06434.pdf) is a first deepl convolutional generative model which allows to
+[DCGAN](https://arxiv.org/pdf/1511.06434.pdf) is a first deep convolutional generative model which allows to
 generate high-quality images compared to previous methods. It does it by training using convolutional layers rather than
 fully-connected ones.
 
