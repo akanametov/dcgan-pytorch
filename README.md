@@ -20,11 +20,10 @@ Run `train.py` to start training process.
 ##### `Generators` and `Discriminators` losses
 
 <a><div class="column">
-    <img src="assets/train_loss.png" align="center" height="200px" width="300px"/>
+    <img src="assets/train_loss.png" align="center" height="300px" width="400px"/>
 </div></a>
 
-##### Improvement of `Generator` over epochs`
-
+##### Improvement of `Generator` over epochs
 ![](assets/dcgan_celeba.gif)
 
 ## License
