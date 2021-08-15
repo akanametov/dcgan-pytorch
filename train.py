@@ -7,14 +7,14 @@ import time
 import argparse
 from progress.bar import IncrementalBar
 
-from dataset import CelebA
+from dataset import CelebA, LSUN
 from generator import Generator
 from discriminator import Discriminator
 from utils import initialize_weights
 
 parser = argparse.ArgumentParser(prog = 'top', description='Train DCGAN')
 parser.add_argument("--epochs", type=int, default=50, help="Number of epochs")
-parser.add_argument("--dataset", type=str, default="celeba", help="Name of the dataset: ['celeba']")
+parser.add_argument("--dataset", type=str, default="celeba", help="Name of the dataset: ['celeba', 'lsun']")
 parser.add_argument("--batch_size", type=int, default=128, help="Batch size")
 parser.add_argument("--lr", type=float, default=0.0002, help="Learning rate")
 args = parser.parse_args()
@@ -42,6 +42,8 @@ d_criterion = nn.BCELoss().to(device)
 print(f'Downloading "{args.dataset.upper()}" dataset ...')
 if args.dataset=='celeba':
     dataset = CelebA(root='.', download=True, transform=transforms)
+elif args.dataset=='lsun':
+    dataset = LSUN(root='.', download=True, transform=transforms)
 dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
 # train
 print("Start Training...")
