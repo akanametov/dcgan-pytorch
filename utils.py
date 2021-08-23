@@ -3,6 +3,10 @@ import urllib
 import zipfile
 from tqdm import tqdm
 
+import torch
+from torch import nn
+
+
 def download(url: str, filename: str, chunk_size: int = 4096) -> None:
     print(f'Downloading {url} ...')
     with open(filename, "wb") as fh:
@@ -15,11 +19,13 @@ def download(url: str, filename: str, chunk_size: int = 4096) -> None:
                     fh.write(chunk)
     return None
 
+
 def extract(from_path: str, to_path: str) -> None:
     print(f'Extracting {from_path} ...')
     with zipfile.ZipFile(from_path, "r", compression=zipfile.ZIP_STORED) as zf:
         zf.extractall(to_path)
     return None
+
 
 def download_and_extract(root: str, url: str, filename: str=None):
     root = os.path.expanduser(root)
@@ -33,6 +39,7 @@ def download_and_extract(root: str, url: str, filename: str=None):
         _ = download(url, fpath)
         _ = extract(fpath, root)
     return None
+
 
 def initialize_weights(m):
     if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
